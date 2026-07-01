@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>黄静轩 | Personal Homepage</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --text: #1f2933;
+      --muted: #637083;
+      --line: #d8d2c4;
+      --panel: #ffffff;
+      --accent: #1d6f78;
+      --accent-strong: #134e55;
+      --gold: #c5973d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(29, 111, 120, 0.14), transparent 34rem),
+        linear-gradient(135deg, #f6f4ef 0%, #edf4f2 52%, #f9f3e4 100%);
+    }
+
+    main {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .intro,
+    .side-panel,
+    .section {
+      border: 1px solid rgba(31, 41, 51, 0.08);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 18px 50px rgba(31, 41, 51, 0.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .intro {
+      min-height: 420px;
+      padding: clamp(32px, 6vw, 64px);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .summary {
+      max-width: 640px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 1.8vw, 1.22rem);
+      line-height: 1.75;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 38px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 13px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--accent-strong);
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    .side-panel {
+      border-radius: 8px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    .mark {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background:
+        linear-gradient(145deg, rgba(29, 111, 120, 0.95), rgba(197, 151, 61, 0.9)),
+        var(--accent);
+      font-size: 2.35rem;
+      font-weight: 800;
+      box-shadow: 0 16px 34px rgba(19, 78, 85, 0.25);
+    }
+
+    .info-list {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+    }
+
+    .info-item {
+      display: grid;
+      gap: 4px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .label {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .value {
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .section {
+      border-radius: 8px;
+      padding: 28px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 1.18rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .body-text {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .links {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    a {
+      color: var(--accent-strong);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .doc-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.55);
+      font-weight: 700;
+    }
+
+    .doc-link span {
+      color: var(--gold);
+      font-size: 0.86rem;
+      white-space: nowrap;
+    }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      main {
+        padding: 28px 0;
+      }
+
+      .hero,
+      .sections {
+        grid-template-columns: 1fr;
+      }
+
+      .intro {
+        min-height: 360px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-label="个人简介">
+      <div class="intro">
+        <div>
+          <p class="eyebrow">University of Electronic Science and Technology of China</p>
+          <h1>黄静轩</h1>
+          <p class="summary">
+            电子科技大学格拉斯哥学院大三学生，专业方向为 Electrical and Electronic Engineering。
+            关注电子系统、芯片设计与工程实践，希望用扎实的技术训练完成更有价值的作品。
+          </p>
+        </div>
+
+        <div class="tag-row" aria-label="关键词">
+          <span class="tag">UESTC</span>
+          <span class="tag">Glasgow College</span>
+          <span class="tag">EEE</span>
+          <span class="tag">Class of 2027</span>
+        </div>
+      </div>
+
+      <aside class="side-panel" aria-label="基本信息">
+        <div class="mark" aria-hidden="true">HJX</div>
+
+        <div class="info-list">
+          <div class="info-item">
+            <span class="label">姓名</span>
+            <span class="value">黄静轩</span>
+          </div>
+          <div class="info-item">
+            <span class="label">学校</span>
+            <span class="value">电子科技大学 UESTC</span>
+          </div>
+          <div class="info-item">
+            <span class="label">学院</span>
+            <span class="value">格拉斯哥学院</span>
+          </div>
+          <div class="info-item">
+            <span class="label">年级 / 方向</span>
+            <span class="value">大三 / EEE</span>
+          </div>
+          <div class="info-item">
+            <span class="label">邮箱</span>
+            <a class="value" href="mailto:2023190505039@std.uestc.edu.cn">2023190505039@std.uestc.edu.cn</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="sections" aria-label="更多信息">
+      <div class="section">
+        <h2>About</h2>
+        <p class="body-text">
+          我正在本科阶段系统学习电子电气工程相关课程，并通过竞赛、课程项目和英语能力训练持续积累工程表达与实践经验。
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Documents</h2>
+        <p class="body-text">以下材料可用于快速了解我的学习与竞赛经历。</p>
+        <div class="links">
+          <a class="doc-link" href="本科成绩单.pdf">本科成绩单 <span>PDF</span></a>
+          <a class="doc-link" href="雅思成绩证明.pdf">雅思成绩证明 <span>PDF</span></a>
+          <a class="doc-link" href="cet6成绩证明.pdf">CET-6 成绩证明 <span>PDF</span></a>
+          <a class="doc-link" href="嵌赛芯片设计赛道全国二等奖.pdf">嵌赛芯片设计赛道全国二等奖 <span>PDF</span></a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 黄静轩
+    </footer>
+  </main>
+</body>
+</html>
